@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NailHub Namibia</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff7fb;
+    color: #352631;
+}
+
+header {
+    background: white;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0d9e5;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #c23875;
+}
+
+nav a {
+    text-decoration: none;
+    color: #352631;
+    margin-left: 15px;
+}
+
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(135deg, #ffe1ed, #fff);
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #a82f66;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    background: #c23875;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+section {
+    max-width: 1050px;
+    margin: auto;
+    padding: 45px 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search {
+    display: flex;
+    gap: 10px;
+    max-width: 800px;
+    margin: auto auto 30px;
+}
+
+input,
+select {
+    padding: 13px;
+    border: 1px solid #e2cad6;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid #efdce6;
+    box-shadow: 0 5px 18px rgba(100, 30, 70, 0.08);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.location {
+    color: #a82f66;
+    font-weight: bold;
+}
+
+.price {
+    color: #a82f66;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.about {
+    background: white;
+    border-radius: 20px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+footer {
+    background: #352631;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+@media(max-width:600px) {
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .search {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+NailHub 🇳🇦
+</div>
+
+<nav>
+<a href="#technicians">Technicians</a>
+<a href="#how">How it works</a>
+<a href="#join">Join</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+Find Your Nail Technician 💅
+</h1>
+
+<p>
+NailHub connects clients with nail technicians across Namibia.
+Find nail services, view profiles and request a booking without
+paying online.
+</p>
+
+<a class="button" href="#technicians">
+Find a Technician
+</a>
+
+</section>
+
+
+<section id="technicians">
+
+<h2>
+Find Nail Technicians
+</h2>
+
+<div class="search">
+
+<input
+id="search"
+type="text"
+placeholder="Search technician or service..."
+onkeyup="searchTechnicians()"
+>
+
+<select id="location" onchange="searchTechnicians()">
+
+<option value="">All Namibia</option>
+
+<option>Windhoek</option>
+<option>Swakopmund</option>
+<option>Walvis Bay</option>
+<option>Oshakati</option>
+<option>Rundu</option>
+<option>Otjiwarongo</option>
+
+</select>
+
+</div>
+
+
+<div class="cards" id="technicianList">
+</div>
+
+</section>
+
+
+<section id="how" class="about">
+
+<h2>
+How NailHub Works
+</h2>
+
+<div class="steps">
+
+<div>
+<h3>🔎 Search</h3>
+<p>
+Find technicians by location and service.
+</p>
+</div>
+
+<div>
+<h3>💅 View</h3>
+<p>
+View services and prices.
+</p>
+</div>
+
+<div>
+<h3>📅 Book</h3>
+<p>
+Request an appointment without paying online.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="join">
+
+<h2>
+Are you a Nail Technician?
+</h2>
+
+<p style="text-align:center">
+Join NailHub and let clients across Namibia discover your services.
+</p>
+
+<div style="text-align:center">
+
+<button class="button" onclick="joinNailHub()">
+Join NailHub
+</button>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<strong>NailHub Namibia 🇳🇦</strong>
+
+<br><br>
+
+Connecting clients and nail technicians across Namibia.
+
+<br><br>
+
+© 2026 NailHub
+
+</footer>
+
+
+<script>
+
+const technicians = [
+
+{
+name: "Luna Nails",
+location: "Windhoek",
+services: "Gel, Acrylic, Nail Art",
+price: "From N$180"
+},
+
+{
+name: "Pretty Tips Studio",
+location: "Swakopmund",
+services: "Gel, Manicure, Nail Art",
+price: "From N$150"
+},
+
+{
+name: "Nail Bliss Namibia",
+location: "Walvis Bay",
+services: "Acrylic, Gel, Pedicure",
+price: "From N$170"
+},
+
+{
+name: "Glow Nails",
+location: "Oshakati",
+services: "Gel, Acrylic, Manicure",
+price: "From N$140"
+},
+
+{
+name: "Elegant Tips",
+location: "Rundu",
+services: "Manicure, Nail Art",
+price: "From N$120"
+},
+
+{
+name: "Nail Queen",
+location: "Otjiwarongo",
+services: "Gel, Acrylic, Pedicure",
+price: "From N$160"
+}
+
+];
+
+
+function displayTechnicians(list) {
+
+const container =
+document.getElementById("technicianList");
+
+container.innerHTML = "";
+
+list.forEach(function(tech) {
+
+const card = document.createElement("div");
+
+card.className = "card";
+
+card.innerHTML = `
+
+<h3>${tech.name}</h3>
+
+<p class="location">
+📍 ${tech.location}
+</p>
+
+<p>
+${tech.services}
+</p>
+
+<p class="price">
+${tech.price}
+</p>
+
+<button class="button"
+onclick="requestBooking('${tech.name}')">
+
+Request Booking
+
+</button>
+
+`;
+
+container.appendChild(card);
+
+});
+
+}
+
+
+function searchTechnicians() {
+
+const search =
+document.getElementById("search")
+.value.toLowerCase();
+
+const location =
+document.getElementById("location")
+.value;
+
+const results = technicians.filter(function(tech) {
+
+const matchesSearch =
+tech.name.toLowerCase().includes(search) ||
+tech.services.toLowerCase().includes(search);
+
+const matchesLocation =
+location === "" ||
+tech.location === location;
+
+return matchesSearch && matchesLocation;
+
+});
+
+displayTechnicians(results);
+
+}
+
+
+function requestBooking(name) {
+
+alert(
+"Booking request selected for " +
+name +
+".\n\nThe next version of NailHub will connect this button to real booking requests."
+);
+
+}
+
+
+function joinNailHub() {
+
+alert(
+"Welcome to NailHub!\n\n" +
+"The technician registration system will be connected in the next version."
+);
+
+}
+
+
+displayTechnicians(technicians);
+
+</script>
+
+</body>
+</html>
